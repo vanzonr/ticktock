@@ -33,8 +33,8 @@ int main()
     // Stop and print out all timings
 
     std::cout << "Timing summary:" << std::endl;
-    std::cout << "#Calculation:\t" << calctime << " sec" << std::endl;
-    stopwatch.tock("#Report:"); // this combines the elapsed time measurement and output
+    std::cout << "#Calculation took:\t" << calctime << " sec" << std::endl;
+    stopwatch.tock("#Report took:     "); // this combines the elapsed time measurement and output
 
     return 0;
 }
