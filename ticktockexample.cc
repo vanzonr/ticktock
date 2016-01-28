@@ -5,19 +5,23 @@ int main()
 {
     TickTock calc;
 
+    // start timer:
     calc.tick();
 
     // do work:
-    for (int i=0;i<10000;i++)
-        for (int j=0;j<10000;j++)
-                 j++;
+    double result = 0;
+    for (int i=0;i<100000000;i++)
+        result += i*i*1e-10;
 
+    // measure time:
     double calctime = calc.silent_tock();
 
+    // report
+    std::cout << result << std::endl;
+    
+    // perhaps other timers...
+
     std::cout << "Timing summary:" << std::endl;
-
-    // other timers...
-
     std::cout << "Calc: " << calctime << std::endl;
 
     return 0;
