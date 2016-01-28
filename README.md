@@ -44,3 +44,14 @@ Implementation
 
 The implemenation is in the source file ticktock.cc, which needs to be
 compiled and linked in to any program using the TickTock class.
+
+
+Files
+-----
+
+README.md            The file you are currently reading
+ticktock.h           Header file to include for code using TickTock
+ticktock.cc          Source file to compile and link for applications using TickTolk
+ticktockexample.cc   Example of how to use TickTolk objects
+Makefile             To compile and run the example ('make run')
+
