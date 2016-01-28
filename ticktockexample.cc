@@ -3,26 +3,38 @@
 
 int main()
 {
-    TickTock calc;
+    // define a stopwatch timer:
+
+    TickTock stopwatch;
 
     // start timer:
-    calc.tick();
+
+    stopwatch.tick();
 
     // do work:
+
     double result = 0;
     for (int i=0;i<100000000;i++)
         result += i*i*1e-10;
 
-    // measure time:
-    double calctime = calc.silent_tock();
+    // measure time and save elapsed time
 
-    // report
-    std::cout << result << std::endl;
-    
-    // perhaps other timers...
+    double calctime = stopwatch.silent_tock();
+
+    // time output as well:
+
+    stopwatch.tick();
+
+    // output of the result of the calculation:
+
+    std::cout << "Calculation summary:" << std::endl;
+    std::cout << "result = " << result << std::endl;
+
+    // Stop and print out all timings
 
     std::cout << "Timing summary:" << std::endl;
-    std::cout << "Calc: " << calctime << std::endl;
+    std::cout << "#Calculation:\t" << calctime << " sec" << std::endl;
+    stopwatch.tock("#Report:"); // this combines the elapsed time measurement and output
 
     return 0;
 }
