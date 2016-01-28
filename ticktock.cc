@@ -2,13 +2,22 @@
 //
 // Supplies implementation of the class TickTock to measure wall-time
 //
-// Ramses van Zon, January 2015
+// Ramses van Zon, 2015-2016
 //
 
 #include "ticktock.h"
 #include <iostream>
 #include <iomanip>
-#include <sys/time.h>
+
+// checking for C++11 support, which has a standard timing library called chrono
+#if __cplusplus > 199711L
+  #include <chrono>
+  // define a reference point:
+  const static std::chrono::steady_clock::time_point reference_time = std::chrono::steady_clock::now();
+#else
+  // if not c++11, fall back on c calls from sys/time.h
+  #include <sys/time.h>
+#endif
 
 static void print(const char* prefix, const double dt)
 {
@@ -21,9 +30,15 @@ static void print(const char* prefix, const double dt)
 
 static double elapsed_time()
 {
-   struct timeval t;
-   gettimeofday(&t, 0);
-   return t.tv_sec + 0.000001 * t.tv_usec;
+  #if __cplusplus > 199711L
+    std::chrono::steady_clock::time_point this_time = std::chrono::steady_clock::now();
+    double dt = std::chrono::duration<double>(this_time - reference_time).count();
+    return dt;
+  #else
+    struct timeval t;
+    gettimeofday(&t, 0);
+    return t.tv_sec + 0.000001 * t.tv_usec;
+  #endif
 }
 
 void TickTock::tick()

@@ -2,7 +2,7 @@
 //
 // Supplies the class TickTock to measure walltime
 //
-// Ramses van Zon, January 2015
+// Ramses van Zon, SciNet, 2015-2016
 //
 #ifndef _TICKTOCKH_
 #define _TICKTOCKH_
