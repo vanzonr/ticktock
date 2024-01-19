@@ -49,9 +49,11 @@ compiled and linked in to any program using the TickTock class.
 Files
 -----
 
-README.md            The file you are currently reading
-ticktock.h           Header file to include for code using TickTock
-ticktock.cc          Source file to compile and link for applications using TickTock
-ticktockexample.cc   Example of how to use TickTock objects
-Makefile             To compile and run the example ('make run')
-
+README.md            The file you are currently reading  
+ticktock.h           Header file to include for code using TickTock  
+ticktock.cc          Source file to compile and link for applications using TickTock  
+ticktockexample.cc   Example of how to use TickTock objects    
+Makefile             To compile and run the example ('make run')    
+WARRANTEE            File that expresses that there is no warranty  
+LICENSE              Text of the MIT license  
+AUTHOR                 Name and email address of the author
