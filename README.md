@@ -3,7 +3,7 @@ TickTock
 ========
 
 This is a little library to easily instrument c++ code with timing
-infomation.
+information.
 
 
 
@@ -42,7 +42,7 @@ tick and the tock, instead of just 'tock', use 'tock_silent' i.e.:
 Implementation
 --------------
 
-The implemenation is in the source file ticktock.cc, which needs to be
+The implementation is in the source file ticktock.cc, which needs to be
 compiled and linked in to any program using the TickTock class.
 
 
@@ -51,7 +51,7 @@ Files
 
 README.md            The file you are currently reading
 ticktock.h           Header file to include for code using TickTock
-ticktock.cc          Source file to compile and link for applications using TickTolk
-ticktockexample.cc   Example of how to use TickTolk objects
+ticktock.cc          Source file to compile and link for applications using TickTock
+ticktockexample.cc   Example of how to use TickTock objects
 Makefile             To compile and run the example ('make run')
 
